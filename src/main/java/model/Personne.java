@@ -52,9 +52,9 @@ public abstract class Personne {
 	@Temporal(TemporalType.DATE)
 	@Column(name="birthday")
 	private Date dtNaiss;
-	@Enumerated(EnumType.STRING)  //POUR DES ENUMERATIONS, ordinal([1], [2]) ou string (MME, MLLE)
-	@Column(name = "title", length = 4)
-	private Civilite civilite;
+//	@Enumerated(EnumType.STRING)  //POUR DES ENUMERATIONS, ordinal([1], [2]) ou string (MME, MLLE)
+//	@Column(name = "title", length = 4)
+//	private Civilite civilite;
 	@Embedded // il embarquera les 4 colonnes d'adresse, pas 1 colonne seulement
 	@AttributeOverrides({
 		@AttributeOverride(name="numero",column=@Column(name="person_number")),
@@ -117,12 +117,12 @@ public abstract class Personne {
 	public void setDtNaiss(Date dtNaiss) {
 		this.dtNaiss = dtNaiss;
 	}
-	public Civilite getCivilite() {
-		return civilite;
-	}
-	public void setCivilite(Civilite civilite) {
-		this.civilite = civilite;
-	}
+//	public Civilite getCivilite() {
+//		return civilite;
+//	}
+//	public void setCivilite(Civilite civilite) {
+//		this.civilite = civilite;
+//	}
 	public Adresse getAdresse() {
 		return adresse;
 	}
