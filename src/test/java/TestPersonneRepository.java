@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import model.Formateur;
 import model.Personne;
 import repository.PersonneRepository;
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -34,9 +33,6 @@ public class TestPersonneRepository {
 	}
 	@Test
 	public void test2() {
-		Formateur olivier= new Formateur();
-		olivier.setId(100);
-		olivier.setVersion(4);
-		moi.save(olivier);
+		
 	}
 }

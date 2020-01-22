@@ -2,7 +2,6 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import dao.DaoSalle;
 
 @Configurable
 @ComponentScan("model")
@@ -27,7 +26,6 @@ public class Test {
 //		System.out.println(properties.get(key));
 		
 		//DaoSalle daoSalle = (DaoSalle) ctx.getBean("daoSalleJpaImp");
-		DaoSalle daoSalle = ctx.getBean(DaoSalle.class);
 
 		ctx.close();
 
