@@ -1,6 +1,7 @@
 package test;
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -15,8 +16,10 @@ public class TestCompteRepository
 	@Autowired
 	private CompteRepository compte;
 	
+	@Test
 	public void testId()
 	{
 		assertEquals(0,compte.findById(2L));
 	}
+	
 }
