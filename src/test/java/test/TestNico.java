@@ -15,7 +15,6 @@ public class TestNico {
 		Compte a=new Artisan();
 		a.setLogin("toto");
 		compteRepository.save(a);
-		
 		ctx.close();
 }
 }
