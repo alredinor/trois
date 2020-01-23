@@ -15,7 +15,7 @@
 
 	<context:annotation-config></context:annotation-config>
 	
-	<context:component-scan base-package="dao"></context:component-scan> <!-- écrire le package à utiliser, balsie qui active la balise component puis repository  -->
+	<context:component-scan base-package="repository,service"></context:component-scan> <!-- écrire le package à utiliser, balsie qui active la balise component puis repository  -->
 
 	<context:property-placeholder location="classpath:config.properties"></context:property-placeholder>
 
