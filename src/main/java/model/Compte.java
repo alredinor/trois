@@ -36,7 +36,6 @@ public class Compte {
 	@Embedded
 	private Adresse adresse;
 	//private String typeCompte;
-	
 	public Compte() {
 		
 	}
