@@ -5,10 +5,9 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import model.Detail;
-import model.DetailPK;
 
-public interface DetailRepository extends JpaRepository<Detail, DetailPK> {
+public interface DetailRepository extends JpaRepository<Detail, String> {
 	
-	//List<Detail> findAll();
+	List<Detail> findByStatut(String s);
 	
 }
