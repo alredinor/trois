@@ -50,6 +50,12 @@ public class Service {
 	public Service(String nomService) {
 		this.nomService = nomService;
 	}
+	
+	
+	public Service(String nomService, Metier metier) {
+		this.nomService = nomService;
+		this.metier = metier;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
