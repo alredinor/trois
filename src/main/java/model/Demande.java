@@ -37,6 +37,8 @@ public class Demande {
 	@OneToOne
 	@JoinColumn(name="id_metier", foreignKey = @ForeignKey(name="demande_metier_id_fk"))
 	private Metier metier;
+	@Column(name="statut")
+	private StatutDemande statut;
 	
 	public Demande() {
 	}
@@ -62,6 +64,22 @@ public class Demande {
 
 
 	
+
+
+
+
+
+	public StatutDemande getStatut() {
+		return statut;
+	}
+
+
+
+
+
+	public void setStatut(StatutDemande statut) {
+		this.statut = statut;
+	}
 
 
 

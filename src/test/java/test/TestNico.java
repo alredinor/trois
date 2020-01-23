@@ -11,7 +11,7 @@ public class TestNico {
 	
 		ClassPathXmlApplicationContext ctx= new ClassPathXmlApplicationContext("application-context.xml");
 	
-		CompteRepository compteRepository = null;
+		CompteRepository compteRepository =ctx.getBean(CompteRepository.class);
 		Compte a=new Artisan();
 		a.setLogin("toto");
 		compteRepository.save(a);
