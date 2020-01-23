@@ -1,3 +1,4 @@
+package test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import model.Artisan;
