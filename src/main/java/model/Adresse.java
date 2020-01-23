@@ -13,7 +13,6 @@ public class Adresse {
 	//@Column(name="ville",length=155)
 	private String ville;
 
-	
 	public Adresse() {
 		
 	}
