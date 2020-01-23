@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
@@ -10,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @SequenceGenerator(name="seqDemande", sequenceName="seq_demande", initialValue = 1, allocationSize = 1)
@@ -39,7 +43,26 @@ public class Demande {
 	private Metier metier;
 	@Column(name="statut")
 	private StatutDemande statut;
+	@Temporal(TemporalType.DATE)
+	@Column(name="date_creation_demande")
+	private Date date;
 	
+	public Date getDate() {
+		return date;
+	}
+
+
+
+
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+
+
+
+
 	public Demande() {
 	}
 

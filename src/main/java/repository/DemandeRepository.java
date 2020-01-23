@@ -1,5 +1,6 @@
 package repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,6 +19,8 @@ public interface DemandeRepository extends JpaRepository<Demande, Long>{
 	List<Demande> findByService(Service idService);
 	List<Demande> findByMetier(Metier idMetier);
 	List<Demande> findByStatut(StatutDemande statut);
-	
+	List<Demande> findByDateBetween(Date date_min, Date date_max);
+	List<Demande> findByDateBefore(Date date);
+	List<Demande> findbYDateAfter(Date date);
 
 }
