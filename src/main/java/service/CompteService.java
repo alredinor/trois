@@ -3,9 +3,7 @@ package service;
 import java.util.Optional;
 
 import model.Compte;
-import model.Personne;
 import repository.CompteRepository;
-import repository.PersonneRepository;
 
 public class CompteService 
 {

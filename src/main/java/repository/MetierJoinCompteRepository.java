@@ -9,10 +9,10 @@ import model.Compte;
 import model.Metier;
 import model.MetierJoinCompte;
 
-public interface MetierJoinCompteRepository extends JpaRepository<MetierJoinCompte, Integer> {
+public interface MetierJoinCompteRepository extends JpaRepository<MetierJoinCompte, Long> {
 	
 	
-	Optional <MetierJoinCompte> findById (Integer id);
+	Optional <MetierJoinCompte> findById (Long id);
 	List <MetierJoinCompte> findByMetier(Metier metier);
 	List <MetierJoinCompte> findByCompte(Compte compte);
 }

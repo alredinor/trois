@@ -5,34 +5,43 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.Personne;
-import repository.PersonneRepository;
+import model.MetierJoinCompte;
+import repository.MetierJoinCompteRepository;
 
 @Service
 public class MetierJoinCompteService {
 
 	@Autowired
-	private PersonneRepository moi;
+	private MetierJoinCompteRepository metierjoincompte;
 
-	public boolean save(Personne p) {
-		Personne personneBase = null;
-		if (p.getId() != null) {
-			Optional<Personne> opt = moi.findById(p.getId()); // optionnal : renvois un objet
-			if (opt.isPresent()) {
-				personneBase = opt.get();
-				personneBase.setPrenom((p.getPrenom() != null) ? p.getPrenom() : personneBase.getPrenom());
+	public boolean save(MetierJoinCompte mjc) 
+	{
+		MetierJoinCompte mjcBase = null;
+		if (mjc.getId() != null) 
+		{
+			Optional<MetierJoinCompte> opt = metierjoincompte.findById(mjc.getId()); // optionnal : renvois un objet
+			if (opt.isPresent())
+			{
+				mjcBase = opt.get();
+				mjcBase.setCompte((mjc.getCompte() != null) ? mjc.getCompte() : mjcBase.getCompte());
+				mjcBase.setMetier((mjc.getMetier() != null) ? mjc.getMetier() : mjcBase.getMetier());
 				return true;
 			}
-		} else {
+		} 
+		else 
+		{
 			Boolean erreur = false;
-			if (p.getPrenom() == null) {
+			if (mjc.getCompte() == null) 
+			{
 				erreur = true;
 			}
-			if (p.getNom() == null) {
+			if (mjc.getMetier() == null) 
+			{
 				erreur = true;
 			}
-			if (erreur) {
-				moi.save(p);
+			if (erreur) 
+			{
+				metierjoincompte.save(mjc);
 				return true;
 			}
 		}

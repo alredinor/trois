@@ -16,7 +16,7 @@ public class MetierJoinCompte {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seqImplementation")
-	private int id;
+	private Long id;
 	@ManyToOne
 	@JoinColumn(name="id_compte", foreignKey = @ForeignKey(name="metier_compte_id_fk"))
 	private Compte compte;
@@ -24,30 +24,51 @@ public class MetierJoinCompte {
 	@JoinColumn(name="id_metier", foreignKey = @ForeignKey(name="compte_metier_id_fk"))
 	private Metier metier;
 	
-	public MetierJoinCompte() {
+	public MetierJoinCompte() 
+	{
+		
 	}
-	public Compte getCompte() {
+
+	public Long getId() 
+	{
+		return id;
+	}
+
+	public void setId(Long id) 
+	{
+		this.id = id;
+	}
+
+	public Compte getCompte() 
+	{
 		return compte;
 	}
-	public void setCompte(Compte compte) {
+	public void setCompte(Compte compte) 
+	{
 		this.compte = compte;
 	}
-	public Metier getMetier() {
+	public Metier getMetier() 
+	{
 		return metier;
 	}
-	public void setMetier(Metier metier) {
+	public void setMetier(Metier metier) 
+	{
 		this.metier = metier;
 	}
+	
 	@Override
-	public int hashCode() {
+	public int hashCode() 
+	{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((compte == null) ? 0 : compte.hashCode());
 		result = prime * result + ((metier == null) ? 0 : metier.hashCode());
 		return result;
 	}
+	
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) 
+	{
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -55,15 +76,18 @@ public class MetierJoinCompte {
 		if (getClass() != obj.getClass())
 			return false;
 		MetierJoinCompte other = (MetierJoinCompte) obj;
-		if (compte == null) {
+		if (compte == null)
+		{
 			if (other.compte != null)
 				return false;
 		} else if (!compte.equals(other.compte))
 			return false;
-		if (metier == null) {
+		if (metier == null) 
+		{
 			if (other.metier != null)
 				return false;
-		} else if (!metier.equals(other.metier))
+		} 
+		else if (!metier.equals(other.metier))
 			return false;
 		return true;
 	}
