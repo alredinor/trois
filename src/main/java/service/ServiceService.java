@@ -5,38 +5,40 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.Personne;
-import repository.PersonneRepository;
+import repository.ServiceRepository;
+
 
 @Service
 public class ServiceService {
 
 	@Autowired
-	private PersonneRepository moi;
+	private ServiceRepository serviceRepository;
 
-	public boolean save(Personne p) {
-		Personne personneBase = null;
-		if (p.getId() != null) {
-			Optional<Personne> opt = moi.findById(p.getId()); // optionnal : renvois un objet
+	public boolean save(model.Service s) {
+		model.Service ServiceBase = null;
+		if (s.getIdService() != null) {
+			Optional<model.Service> opt = serviceRepository.findByIdService(s.getIdService()); // optionnal : renvois un objet
 			if (opt.isPresent()) {
-				personneBase = opt.get();
-				personneBase.setPrenom((p.getPrenom() != null) ? p.getPrenom() : personneBase.getPrenom());
+				ServiceBase = opt.get();
+				ServiceBase.setNomService((s.getNomService() != null) ? s.getNomService() : ServiceBase.getNomService());
+				ServiceBase.setMetier((s.getMetier() != null) ? s.getMetier() : ServiceBase.getMetier());
 				return true;
 			}
 		} else {
 			Boolean erreur = false;
-			if (p.getPrenom() == null) {
+			if (s.getNomService() == null) {
 				erreur = true;
 			}
-			if (p.getNom() == null) {
+			if (s.getMetier() == null) {
 				erreur = true;
 			}
-			if (erreur) {
-				moi.save(p);
+			
+			if (!erreur) {
+				serviceRepository.save(s);
 				return true;
 			}
 		}
-		//moi.save(personneBase);
+		//moi.save(ServiceBase);
 		return false;
 
 	}
