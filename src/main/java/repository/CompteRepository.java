@@ -8,8 +8,8 @@ import model.Compte;
 
 public interface CompteRepository extends JpaRepository<Compte, Long> {
 	
-	List<Compte> findByIdCompte();
-	List<Compte> findByEmail();
-	List<Compte> findByAdresse();
+	//List<Compte> findByIdCompte();
+	//List<Compte> findByEmail();
+	//List<Compte> findByAdresse();
 	
 }
