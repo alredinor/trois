@@ -2,5 +2,15 @@ package model;
 
 public enum StatutDemande {
 
-	Valide, En_attente, Termine;
+	Valide("validé"), En_attente("en attente"), Termine("terminé");
+	private String statut;
+	private StatutDemande(String statut) {
+	this.statut=statut;	
+	}
+	public String getStatut() {
+		return statut;
+	}
+	
+	
+	
 }
