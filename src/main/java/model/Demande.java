@@ -15,6 +15,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @SequenceGenerator(name="seqDemande", sequenceName="seq_demande", initialValue = 1, allocationSize = 1)
 public class Demande {
@@ -45,6 +47,7 @@ public class Demande {
 	private StatutDemande statut;
 	@Temporal(TemporalType.DATE)
 	@Column(name="date_creation_demande")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date date;
 	
 	public Date getDate() {
