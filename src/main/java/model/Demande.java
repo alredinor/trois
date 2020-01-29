@@ -14,6 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Version;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -49,7 +50,25 @@ public class Demande {
 	@Column(name="date_creation_demande")
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date date;
+	@Version
+	private int version;
 	
+	public int getVersion() {
+		return version;
+	}
+
+
+
+
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+
+
+
+
 	public Date getDate() {
 		return date;
 	}
