@@ -36,9 +36,27 @@ public class Compte {
 	@Embedded
 	private Adresse adresse;
 	//private String typeCompte;
+	@Column(name="version")
+	private int version;
+	
+	
 	public Compte() {
 		
 	}
+
+	
+	
+	public int getVersion() {
+		return version;
+	}
+
+
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+
 
 	public Compte(String login, String mdp, String email, Adresse adresse) {
 		super();
