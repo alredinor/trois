@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="compte")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -24,14 +26,16 @@ import javax.persistence.Table;
 public class Compte {
 	
 	@Id
-	
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seqCompte")
 	private Long idCompte;
 	@Column(name="login", length=150)
+	@NotEmpty
 	private String login;
 	@Column(name="mdp", length=150)
+	@NotEmpty
 	private String mdp;
 	@Column(name="mail", length=255)
+	@NotEmpty
 	private String email;
 	@Embedded
 	private Adresse adresse;
